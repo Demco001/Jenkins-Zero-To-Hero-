@@ -49,7 +49,7 @@ pipeline {
             environment {
                 GIT_REPO_NAME = "Jenkins-Zero-To-Hero-"
                 GIT_user = "Demco001"
-                GITHUB_TOKEN = credentials('github-token')
+                GITHUB_TOKEN = credentials('github')
             }
             steps {
                 sh '''
