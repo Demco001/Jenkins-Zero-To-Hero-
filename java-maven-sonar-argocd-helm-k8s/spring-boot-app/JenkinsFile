@@ -48,13 +48,13 @@ pipeline {
         stage('Update Deployment File') {
             environment {
                 GIT_REPO_NAME = "Jenkins-Zero-To-Hero-"
-                GIT_user = "demco001"
+                GIT_user = "Demco001"
                 GITHUB_TOKEN = credentials('github-token')
             }
             steps {
                 sh '''
                     git config user.email "demco.sunday@yahoo.com"
-                    git config user.name "demco001"
+                    git config user.name "Demco001"
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     git add . java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
