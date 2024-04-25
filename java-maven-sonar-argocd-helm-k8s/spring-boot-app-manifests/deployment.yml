@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: demco001/cicd:v2.0
+        image: demco001/cicd:1
         ports:
         - containerPort: 8080
