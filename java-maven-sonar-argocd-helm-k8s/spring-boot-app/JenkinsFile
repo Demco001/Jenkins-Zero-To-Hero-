@@ -1,7 +1,8 @@
 pipeline {
     agent {
         docker {
-            image 'abhishekf5/maven-abhishek-docker-agent:v1'
+            //image 'abhishekf5/maven-abhishek-docker-agent:v1'
+            image 'demco001/ultimate-cicd-pipeline'
             args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
         }
     }
@@ -20,7 +21,7 @@ pipeline {
         }
         stage('Static Code Analysis') {
             environment {
-                SONAR_URL = "http://18.134.144.89:9000"
+                SONAR_URL = "http://35.177.236.52:9000/"
             }
             steps {
                 withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
